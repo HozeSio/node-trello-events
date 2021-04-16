@@ -73,7 +73,7 @@ function getBoardActivity(boardId){
 		for (var ix in boardActions){
 
 			//skip seen events
-			actionId = parseInt(boardActions[ix].id, 16);
+			actionId = new Date(boardActions[ix].date).getTime();
 			if (actionId <= config.minId){
 				continue;
 			}
